@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AVOCEVOU Samuel — Portfolio</title>
+  <meta name="description" content="Portfolio de AVOCEVOU Samuel — Créatif visuel : affiches, packaging, logos, visuels IA, TonSonPerso." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /*
+      Portfolio — Version centrée, moderne, responsive
+      Couleurs: bleu #0d0dd3, jaune #ffc107, blanc #ffffff
+      Design: conserve le modèle précédent, allège le texte, centre tout.
+    */
+    :root {
+      --blue: white;
+      --yellow: #ffc107;
+      --white: #ffffff;
+      --bg: #ffffff;
+      --ink: #0b1220;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --glass: rgba(255,255,255,0.06);
+      --line: #eef2ff;
+      --radius: 14px;
+      --maxw: 1200px;
+      --ff-heading: "Montserrat","Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      --ff-body: "Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      --shadow-md: 0 12px 36px rgba(13,13,211,0.08);
+    }
+    /* Reset */
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      margin:0;
+      font-family:var(--ff-body);
+      color:var(--ink);
+      background: white;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    img{display:block;max-width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+    /* Header / Nav */
+    header{
+      position:sticky;top:0;z-index:120;background:#0d0dd3;
+      padding:10px 0;border-bottom:4px solid rgba(255,193,7,0.06);
+      box-shadow: 0 6px 20px rgba(2,6,23,0.14);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--maxw);margin:0 auto;padding:8px 20px}
+    .brand{display:flex;gap:12px;align-items:center;color:white}
+    .logo{
+      width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--blue),var(--yellow));color:#071026;font-weight:800;font-family:var(--ff-heading);
+      box-shadow:0 8px 26px rgba(13,13,211,0.16);
+    }
+    .brand-text h1{font-family:var(--ff-heading);font-size:16px;margin:0;color:#fff}
+    .brand-text p{font-size:12px;margin:0;color:rgba(255,255,255,0.9)}
+    nav ul{display:flex;gap:14px;align-items:center;margin:0;padding:0;list-style:none}
+    nav ul li a:hover{color: #ffc107;}
+    nav a.nav-link{color:rgba(255,255,255,0.95);font-weight:600;padding:8px 12px;border-radius:10px; font-size: 1rem;}
+    nav a.nav-link:hover{background:rgba(255,255,255,0.04)}
+    .cta{background:var(--yellow);color:var(--blue);padding:8px 12px;border-radius:10px;font-weight:800}
+    .hamburger{display:none;background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer}
+    @media(max-width:900px){
+      nav ul{display:none}
+      .hamburger{display:block}
+    }
+    .mobile-panel{display:none;background:#0d0dd3;padding:12px;}
+    .mobile-panel a{display:block;padding:8px 0;color:white;border-bottom:1px solid rgba(255,255,255,0.03); font-weight: 700;}
+    /* HERO centered */
+    .hero{
+      padding:78px 0 36px;
+      display:flex;justify-content:center;align-items:center;
+    }
+    .hero-card{
+      width:100%;
+      max-width:980px;
+      background:#0d0dd3;
+      border-radius:20px;padding:36px;text-align:center;box-shadow:var(--shadow-md);
+      border:1px solid rgba(255,255,255,0.04);
+      position:relative;
+    }
+    .profile-pic{width:170px;height:170px;border-radius:50%;overflow:hidden;border:6px solid var(--yellow);background:#fff;margin:-110px auto 12px;box-shadow:0 18px 46px rgba(2,6,23,0.24)}
+    .profile-pic img{width:100%;height:33vh;object-fit: cover;}
+    .hero-title{font-family:var(--ff-heading);font-size:28px;margin:6px 0 6px;color:#fff;line-height:1.02}
+    .hero-sub{color:rgba(255,255,255,0.95);margin-bottom:10px;font-size:15px}
+    .hero-desc{color:rgba(255,255,255,0.95);max-width:820px;margin:0 auto;font-size:15px;line-height:1.6}
+    .hero-actions{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+    .btn-primary{background:var(--yellow);color:var(--blue);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:800}
+    .btn-ghost{background:var(--yellow);border:1px solid rgba(255,255,255,0.12);color:#fff;padding:10px 14px;border-radius:12px;cursor:pointer; font-weight: 800;}
+    /* Sections */
+    main{background:var(--bg)}
+    section{padding:34px 0}
+    .section-head{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:center;gap:12px}
+    .section-title{font-family:var(--ff-heading);font-size:36px;color:#0d0dd3;margin:0; text-align: center; align-items: center;}
+    .section-desc{color:var(--muted);margin:0}
+    /* About centered */
+    .about{max-width:900px;margin:18px auto;text-align:justify;padding:10px}
+    .about-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:var(--shadow-md)}
+    .about-card p{color:var(--muted);line-height:1.7;margin:0}
+    /* Services slight */
+    .services{max-width:var(--maxw);margin:18px auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:1000px){ .services{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:640px){ .services{grid-template-columns:1fr}}
+    .service{background:#f5f5f5;border-radius:12px;padding:16px;border:1px solid var(--line);box-shadow:var(--shadow-md)}
+    .service h4{margin:0 0 6px;color:#0d0dd3; font-weight: 1600; font-size: 1.2rem; justify-content: center; text-align: center;}
+    .service p{margin:0;color:var(--muted);font-size:1.1rem; text-align: center; justify-content: center;}
+    /* Portfolio grid */
+    .filters{background-color: var(--blue); color: var(--white);display:flex;gap:10px;flex-wrap:wrap;max-width:var(--maxw);margin:12px auto;padding:0 20px;justify-content:center; transition: 0.3s;}
+    .filter-btn{background-color: #0d0dd3;border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer;color:white}
+    .filter-btn.active{color:var(--blue);box-shadow:var(--shadow-md); background-color: var(--yellow);}
+    .filter-btn:hover{background-color: #ffc107; color: blue;}
+    .portfolio-grid{max-width:var(--maxw);margin:18px auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:1100px){ .portfolio-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:680px){ .portfolio-grid{grid-template-columns:1fr}}
+    .project-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-md);display:flex;flex-direction:column;transition:transform .18s ease}
+    .project-card:hover{transform:translateY(-6px)}
+    .thumb-carousel{position:relative;aspect-ratio:4/3;overflow:hidden;background:#f8fafc}
+    .thumb-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+    .thumb-track img{width:100%;height:100%;object-fit:cover;flex:0 0 100%; transition: transform .5s ease, opacity .5s ease;}
+    .thumb-track img.active {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    /* arrows hidden by default, show on hover */
+    .thumb-prev,.thumb-next{
+      position:absolute;top:50%;transform:translateY(-50%);
+      width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      color:#ffffff;background:rgba(0,0,0,0.36);border:1px solid rgba(255,255,255,0.12);
+      cursor:pointer;opacity:0;transition:opacity .18s,transform .12s;user-select:none;z-index:20; opacity: 1;
+    }
+    .thumb-prev{left:10px} .thumb-next{right:10px}
+    .project-card:hover .thumb-prev,.project-card:hover .thumb-next{opacity:1}
+    .project-card.touch-active .thumb-prev,.project-card.touch-active .thumb-next{opacity:1}
+    .proj-body{padding:12px;display:flex;flex-direction:column;gap:8px}
+    .proj-title{font-family: "Arial Black";font-weight:800;color:#0d0dd3;margin:0;font-size:1.5rem; text-align: center;}
+    .proj-desc{font-size:1.1rem;font-weight: 600;color: #071026;line-height: 1.5;text-align: left;}
+    .proj-actions{display:none}
+    .btn-small{padding:8px 10px;border-radius:10px;border:0;cursor:pointer}
+    .btn-view{background:var(--blue);color:#fff}
+    .btn-detail{background:#fff;border:1px solid var(--line)}
+    /* Lightbox */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.75);z-index:150;padding:18px}
+    .modal.open{display:flex}
+    .modal-box{width:min(100%,980px);background:linear-gradient(180deg,#061028,#0b1330);border-radius:12px;padding:14px;color:#fff;border:1px solid rgba(255,255,255,0.06)}
+    .modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .modal-head h3{margin:0;font-family:var(--ff-heading)}
+    .modal-close{background:transparent;border:0;color:#fff;font-size:26px;cursor:pointer}
+    .modal-viewport{position:relative;margin-top:12px;border-radius:10px;overflow:hidden;background:#071026;height:520px}
+    .modal-track{display:flex;height:100%;transition:transform .4s ease}
+    .modal-track img{width:100%;height:100%;object-fit:contain;flex:0 0 100%}
+    .modal-prev,.modal-next{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.06);color:#fff;border:1px solid rgba(255,255,255,0.18);cursor:pointer}
+    .modal-prev{left:12px} .modal-next{right:12px}
+    .modal-desc{margin-top:12px;color:#d7deff}
+    /* Contact layout: form and coords separated vertically */
+    .contact-wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr;gap:18px}
+    .card-form{background:var(--card);border:1px solid var(--line);padding:20px;border-radius:12px;box-shadow:var(--shadow-md)}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+    .input{padding:12px;border-radius:10px;border:1px solid lightblue;font-size:1.1rem}
+    .textarea{min-height:140px;padding:12px;border-radius:10px;border:1px solid lightblue;resize:vertical;font-size:1.1rem}
+    .send-row{display:flex;gap:8px;align-items:center}
+    .btn-send{background:#0d0dd3;color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-mail{background:#0d0dd3;border:1px solid var(--line);padding:10px 14px;border-radius:10px;color:#fff; font-weight: 700; cursor:pointer}
+    .contact-card{background:var(--card);border:1px solid var(--line);padding:14px;border-radius:12px;box-shadow:var(--shadow-md);text-align:center}
+    .socials{display:flex;gap:12px;justify-content:center;margin-top:10px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-weight: 700;}
+    .socials a img{width:25px;height:25px}
+    /* Footer */
+    footer{background:#0d0dd3;border-top:1px solid var(--line);padding:18px 0;margin-top:36px}
+    .foot-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;justify-content:center;align-items:center;gap:12px;color:white}
+    @media(max-width:960px){ .foot-inner{flex-direction:column;gap:8px} 
+      .about{word-break: break-word; text-align: left}
+      .proj-desc{word-break: break-word; text-align: left;}
+    }
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+    p,h2{font-size: 0.8rem;}
+    /* small */
+    @media(max-width:480px){
+      .hero-title{font-size:20px}
+      .profile-pic{width:130px;height:130px;margin-top:-65px}
+      .modal-viewport{height:320px}
+      .nav ul {background: #0d0dd3;}
+      h2{font-size: 0.8rem;}
+      .about{word-break: break-word;text-align: left}
+      .proj-desc{word-break: break-word;text-align: left}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="nav container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden>AS</div>
+        <div class="brand-text">
+          <strong>AVOCEVOU Samuel</strong>
+        </div>
+      </div>
+      <nav aria-label="Navigation principale">
+        <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu">☰</button>
+        <ul id="navList">
+          <li><a class="nav-link" href="#home"><strong>Accueil</strong></a></li>
+          <li><a class="nav-link" href="#about"><strong>À propos</strong></a></li>
+          <li><a class="nav-link" href="#portfolio"><strong>Portfolio</strong></a></li>
+          <li><a class="nav-link" href="#services"><strong>Services</strong></a></li>
+          <li><a class="nav-link" href="#contact"><strong>Contact</strong></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="mobilePanel" class="mobile-panel" aria-hidden="true">
+      <div class="container">
+        <a href="#home">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+  <!-- HERO -->
+  <main id="home" class="hero" role="main">
+    <div class="hero-card reveal" aria-labelledby="heroTitle">
+      <div class="profile-pic" title="Photo de profil">
+        <img id="profilePhoto" src="images/1760341533030_084545.png" alt="Photo de AVOCEVOU Samuel">
+      </div>
+      <h2 id="heroTitle" class="hero-title">Je crée des visuels qui parlent à l’œil et marquent les esprits.</h2>
+      <p class="hero-desc" style="font-size:1.1rem;font-weight: 600;color: white;line-height: 1.5;text-align: center;">Je suis créateur visuel spécialisé en <strong>design graphique, branding et création de visuels </strong>assistés par l'intelligence artificielle. Je transforme les idées en visuels percutants pour les marques, entreprises et projets personnels</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">Voir mes projets</button>
+        <a class="btn-ghost" href="#contact">Demander un devis</a>
+      </div>
+    </div>
+  </main>
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <div class="section-head container">
+      <h2 class="section-title">Qui suis-je ?</h2>
+      <p class="section-desc"></p>
+    </div>
+    <div class="about container">
+      <div class="about-card" style="text-align:left">
+        <p id="aboutText" style="font-size:1.1rem;font-weight: 600;color: #071026;line-height: 1.5;text-align: left;">Je m’appelle <strong>Samuel Avocevou</strong>. Je suis un créatif visuel passionné, spécialisé dans la conception d’affiches, d’étiquettes produits, de logos, de publications réseaux sociaux et de visuels de communication percutants.
+            Ma particularité ? Je combine l’intelligence artificielle, le design graphique et la stratégie visuelle pour créer des visuels originaux, mémorables et impactants.
+            Je travaille aussi bien sur des projets fictifs (pour explorer ma créativité) que sur des projets réels pour des marques et entreprises. Je suis également fondateur de <strong>TonSonPerso</strong>, un service de création de <span> musiques personnalisées avec IA</span>, livrées en MP3 pour toute occasion: <strong>anniversaire, amour, hommage, etc.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- SERVICES -->
+  <section id="services" class="reveal">
+    <div class="section-head container">
+      <h3 class="section-title">Mes Services</h3>
+      <p class="section-desc"></p>
+    </div>
+    <div class="services container" style="font-size:1.1rem;font-weight: 600;color: #071026;line-height: 1.5;text-align: justify;">
+      <div class="service">
+        <h4>Création d’affiches professionnelles</h4>
+        <p>Affiches pour campagnes, événements, réseaux sociaux — composition & hiérarchie visuelle optimisées.</p>
+      </div>
+      <div class="service">
+        <h4>Étiquettes produits</h4>
+        <p>Design packaging pour aliments & cosmétiques, prêt pour impression et mockups produits.</p>
+      </div>
+      <div class="service">
+        <h4>Logos & identités visuelles</h4>
+        <p>Conception de logos, palettes, typographies et guidelines de marque.</p>
+      </div>
+      <div class="service">
+        <h4>Mockups personnalisés</h4>
+        <p>Mises en situation réalistes pour présenter vos produits ou visuels.</p>
+      </div>
+      <div class="service">
+        <h4>Consultation créative</h4>
+        <p>Stratégie visuelle, storytelling et direction artistique pour campagnes percutantes.</p>
+      </div>
+      <div class="service">
+        <h4>Musiques personnalisées (TonSonPerso)</h4>
+        <p>Chansons 100% sur-mesure créées avec IA, livrées en MP3 — idéal pour cadeaux et évènements.</p>
+      </div>
+      <div class="service">
+        <h4>Photoshooting IA</h4>
+        <p>Sublimez vos produits avec des shooting Photos professionnelles sans avoir besion d'un photographe.</p>
+      </div>
+    </div>
+  </section>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="reveal">
+    <div class="section-head container">
+      <h3 class="section-title">Mes projets</h3>
+      <p class="section-desc"></p>
+    </div>
+    <div class="filters" role="tablist" aria-label="Filtres portfolio"> <!--style="display:none"-->
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="affiches">Affiches</button>
+      <button class="filter-btn" data-filter="etiquettes">Étiquettes</button>
+      <button class="filter-btn" data-filter="logos">Logos</button>
+      <button class="filter-btn" data-filter="musique">Musiques</button>
+      <button class="filter-btn" data-filter="banniere">Bannière</button>
+      <button class="filter-btn" data-filter="ai">Photoshooting IA</button>
+    </div>
+    <div id="portfolioGrid" class="portfolio-grid" aria-live="polite" role="list"></div>
+  </section>
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="modal" aria-hidden="true" role="dialog" aria-label="Aperçu du projet">
+    <div class="modal-box" role="document">
+      <div class="modal-head">
+        <h3 id="lightboxTitle">Titre du projet</h3>
+        <button id="lightboxClose" class="modal-close" aria-label="Fermer">×</button>
+      </div>
+      <div class="modal-viewport" role="region" aria-live="polite">
+        <div id="lightboxTrack" class="modal-track"></div>
+        <button id="lightboxPrev" class="modal-prev" aria-label="Image précédente">&#10094;</button>
+        <button id="lightboxNext" class="modal-next" aria-label="Image suivante">&#10095;</button>
+      </div>
+      <p id="lightboxDesc" class="modal-desc"></p>
+    </div>
+  </div>
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="section-head container">
+      <h3 class="section-title">Contact</h3>
+      <p class="section-desc"></p>
+    </div>
+    <div class="contact-wrap container">
+      <form id="contactForm" class="card-form" autocomplete="on" aria-label="Formulaire de contact">
+        <div class="field">
+          <label for="name">Nom complet</label>
+          <input id="name" name="name" class="input" placeholder="Ton nom complet" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" class="input" type="email" placeholder="Ton email" required>
+        </div>
+        <div class="field">
+          <label for="subject">Sujet</label>
+          <input id="subject" name="subject" class="input" placeholder="Sujet (ex: Devis)">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="textarea" placeholder="Ton message..." required></textarea>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <button type="submit" class="btn-send" style="background: rgb(4, 206, 4);">Envoyer sur WhatsApp</button>
+        </div>
+      </form>
+      <div class="contact-card" aria-hidden="false">
+        <h4 style="margin:0 0 8px">Réseaux</h4>
+        <p style="color:var(--muted);margin-top:10px;font-size:14px">Email : <a href="mailto:samuelavocevou2008@gmail.com">samuelavocevou2008@gmail.com</a><br>WhatsApp : <a href="https://wa.me/c/22957783280" target="_blank">Envoyer un message</a></p>
+        <div class="socials" role="navigation" aria-label="Réseaux sociaux">
+          <!-- You will replace these with image icons if you want; currently SVG-like placeholders -->
+          <a href="https://www.facebook.com/samuel.avocevou.1" target="_blank" title="Facebook">
+            <!-- simple svg icon -->
+            <img src="images/IMG-20250901-WA0023.jpg" alt="Facebook icon" onerror="this.style.display='none'">
+          </a>
+          <a href="https://wa.me/c/22957783280" target="_blank" title="WhatsApp">
+            <img src="images/IMG-20250901-WA0024.jpg" alt="WhatsApp icon" onerror="this.style.display='none'">
+          </a>
+          <a href="https://www.linkedin.com/in/samuel-avocevou-932561365" target="_blank" title="LinkedIn">
+            <img src="images/IMG-20250901-WA0026_1.jpg" alt="LinkedIn icon" onerror="this.style.display='none'">
+          </a>
+          <a href="https://www.instagram.com/samuelavocevou" target="_blank" title="Instagram">
+            <img src="images/IMG-20250901-WA0025_1.jpg" alt="Instagram icon" onerror="this.style.display='none'">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-inner container">
+      <div style="color:white; font-weight: 1.2rem"><strong>© <span id="year"></span></strong> <strong>2025 Tous droits réservés</strong></div>
+      <div style="color:var(--muted)"></div>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" style="display:none;position:fixed;right:20px;bottom:20px;background:#071026;color:#fff;padding:10px 12px;border-radius:10px;z-index:999">Message envoyé ✅</div>
+  <!-- JAVASCRIPT -->
+  <script>
+    /*
+      Portfolio rendering & interactions
+      - Projects array: only title, category, images[], description
+      - Portfolio grid shows image carousel per card; arrows visible on hover (desktop) or after tap (mobile)
+      - Lightbox to view images in large
+      - Filters are implemented but not shown (kept for compatibility)
+      - Contact form sends JSON to send_email.php using fetch
+    */
+    // PROJECTS: keep descriptions empty for you to fill later
+    const PROJECTS = [
+      {
+        title: "Titan Gym Club",
+        cat: "affiches",
+        description: "Ce projet consistait à créer une affiche percutante pour une salle de sport premium, en jouant sur l'intensité visuelle et l'image de performance. Réalisée avec Photoshop et un générateur d'image IA, l'affiche adopte un style contrasté, une typographie musclée et un message direct, reflétant l'énergie et la puissance de l'univers fitness. Ce projet a été apprécier par un membre de ma communauté Facebook: 'Beau travail'.",
+        images: ["images/Challenge jour 10.jpg"]
+      },
+      {
+        title: "Location & Vente Auto",
+        cat: "affiches",
+        description: "Dans le cadre fictif, j'ai réalisé une affiche dynamique pour une entreprise de location et vente de voitures, avec pour objectif de proposer un visuel percutant et une mise en page professionnelle. Conçu à l'aide de Photoshop et d'un générateur d'image IA, le design adopte un style épuré et moderne, adapté à un univers business. L'ensemble vise à refléter le sérieux de la marque tout en attirant efficacement l'attention du public cible. L'objectif est de créer une affiche dynamique pour une entreprise spécialisée dans la location et la vente de véhicules, avec un visuel engageant et une mise en page professionnelle.",
+        images: ["images/challenge jour 7.jpg"]
+      },
+      {
+        title: "Brilys",
+        cat: "affiches",
+        description: "Cette affiche met en valeur une entreprise imaginaire de nettoyage professionnel: Brilys. L'objectif de ce projet est de montrer que la propriété peut devenir un art de vivre, et que même les services du quotidien méritent une communication visuelle moderne, claire et impactante.",
+        images: ["images/1752215421182.jpg"]
+      },
+      {
+        title: "Essence d'Ébène",
+        cat: "affiches",
+        description: "Ce projet illustre une affiche conçue pour une marque imaginaire valorisant la beauté et la noblesse de la peau noire. L'image principale a été générée par l'intellignece artificielle selon un brief précis(peau d'ébène, lumière douce, émotion). La direction artistique et le montage ont été réalisés sur Photoshop, avec un soin particulier apporté au jeu de lumière, à la composition et à la typographie. L'objectif était de créer un visuel élégant, profond et porteur d'un message fort: 'Réveille la noblesse en toi.' Ce projet témoigne de ma capacité à allier storytelling, maîtrise technique et direction artistique pour concevoir des visuels à la fois esthétiques et signifiants.",
+        images: ["images/challenge Jour 2.png"]
+      },
+      {
+        title: "CodeRéseau",
+        cat: "affiches",
+        description: "Conception d'une affiche de recrutement pour une startup tech fictive spécialisée dans la création de réseaux et le développement numérique. L'objectif de ce projet est d'illustrer le sérieux d'une startup innovante en quête de talents dans le développement web et le design graphique. La particularité du projet était l'intégration d'un personnage principal et d'un fond générés par IA. L'affiche a suscité des retours constructifs sur l'harmonie générale et l'approche créative.",
+        images: ["images/1752174917262.jpg"]
+      },
+      {
+        title: "Design Graphique",
+        cat: "affiches",
+        description: "J'ai conçu cette affiche en pensant à ces marques qui marquent les esprits. J'ai voulu un visuel qui dès le premier regard, avec des contrastes forts entre le noir profond et des éclats de couleurs vives. La typographie joue entre bold pour les titres et léger pour les détails, comme un équilibre entre impact et élégance. Les formes géométriques dynamiques et les dégradés suggèrent le mouvement, l'innovation - comme si chaque ligne dessinait une idée en train de naître. J'ai imaginé ce design sur des panneaux urbains ou des écrans, pour qu'il vive dans l'espace public avec la même énergie qu'en miniature.",
+        images: ["images/Affiche publicitaire design1.jpg"]
+      },
+      {
+        title: "Ogui Tché",
+        cat: "etiquettes",
+        description: "Mettre en valeur le logo Ogui Tché dans un contexte lié directement au produit(le maïs d'amidon), afin de démontrer la pertinence de l'identité visuelle sur un support culinaire. L'objectif était de créer une projection réaliste, donnant au consommateur l'impression d'un produit prêt à être acheté et consommé.",
+        images: ["images/Ogui tché...modif.jpg","images/mockup Ogui tché_023235.jpg","images/Ogui tché.jpg","images/file_0000000094c461f4818250d36b93ec5e.png"]
+      },
+      {
+        title: "Étiquette Jus Tropical",
+        cat: "etiquettes",
+        description: "Dans le cadre d'un projet fictif pour la marque de boissons naturelles Rosso Délice, j'ai conçu une étiquette pour un jus de bissap artisanal baptisé 'Rosso Délice'. Ce challenge personnel visait à renforcer mes compétences en design packaging en explorant des compositions graphiques allant authenticité et impact visuel. L'étiquette mêle couleurs naturelles inspirées du bissap, typographie moderne et hiérarchie d'informations claire, le tout pensé pour capter l'attention du consommateur tout en affirmant l'identité locale et artisanale du produit.",
+        images: ["images/Challenge jour 8.jpg"]
+      },
+      {
+        title: "Sam Chips",
+        cat: "ai",
+        description: "Photoshoot IA pour une marque locale de Chips de banane nommé Sam Chips",
+        images: ["images/20250819_181630.jpg", "images/20250819_181502.jpg", "images/20250819_181406.jpg", "images/20250819_181303.jpg", "images/20250819_181138.jpg"]
+      },
+      {
+        title: "Bin'Aïs Events",
+        cat: "banniere",
+        description: "Créer une bannière impactante pour présenter mes services en design graphique de manière claire, professionnelle et convaincante. L'intention était de marquer les esprits dès les premieres secondes, en affirmant une posture de créatif sérieux, structuré et orienté résultats. Un message direct, pensé pour capter l'attention en quelques mots. Au-delà du design, cette bannière reflète un positionnement: celui d'un créatif qui ne vend pas juste du 'beau', mais du pertinent. Chaque choix visuel est aligné avec une intention stratégique: inspirer confiance, générer des demandes, faire comprendre la valeur ajoutée du service.",
+        images: ["images/1760344163695.jpg"]
+      },
+      {
+        title: "La Reine du Possible",
+        cat: "banniere",
+        description: "Créer une bannière impactante pour présenter mes services en design graphique de manière claire, professionnelle et convaincante. L'intention était de marquer les esprits dès les premieres secondes, en affirmant une posture de créatif sérieux, structuré et orienté résultats. Un message direct, pensé pour capter l'attention en quelques mots. Au-delà du design, cette bannière reflète un positionnement: celui d'un créatif qui ne vend pas juste du 'beau', mais du pertinent. Chaque choix visuel est aligné avec une intention stratégique: inspirer confiance, générer des demandes, faire comprendre la valeur ajoutée du service.",
+        images: ["images/1760344163712.jpg"]
+      },
+      {
+        title: "CHEZ WINNER",
+        cat: "affiches",
+        description: "Pour un client dans le domaine de la street-food, j'ai repensé l'affiche publicitaire de sa marque de shawarma et pannis, jugée initialement peu engageante. L'objectif est de créer une affiche publicitaire qui stimule l'appétit, attire l'attention immédiatement et donne envie de commander. Il fallait traduire visuellement la qualité artisanale et le plaisir gourmand du produit.",
+        images: ["images/Shawarma Rhétice 1.jpg"]
+      },
+      {
+        title: "Sam Baobab",
+        cat: "ai",
+        description: "Photoshoot IA pour une marque locale de baobab nommé Sam Baobab",
+        images: ["images/20250820_134757.jpg", "images/20250820_134840.jpg", "images/20250820_134911.jpg", "images/20250820_134950.jpg"]
+      },
+      {
+        title: "Samourt",
+        cat: "ai",
+        description: "Mini compagne publicitaire avec l'IA pour une marque locale de Yaourt Coco nommé Samourt",
+        images: ["images/20250826_202309.jpg", "images/20250826_202843.jpg", "images/20250826_203050.jpg", "images/20250826_203146.jpg", "images/20250826_203222.jpg"]
+      },
+      {
+        title: "Logo — Startup Tech",
+        cat: "logos",
+        description: "Faites parler votre business avec des images générées par l'IA. Votre produit mérite d'être valorisé.",
+        images: ["images/Screenshot_20250830-194244_1.jpg", "images/Screenshot_20250830-194251_1.jpg", "images/Screenshot_20250830-194303_1.jpg", "images/Screenshot_20250830-194315_1.jpg", "images/Screenshot_20250830-194337_1.jpg"]
+      },
+      {
+        title: "Série IA — Portraits Lumière",
+        cat: "ai",
+        description: "Création d'IA",
+        images: ["images/Screenshot_20250831-065618_1.jpg", "images/Screenshot_20250831-065622_2.jpg", "images/Screenshot_20250831-065624_1.jpg", "images/Screenshot_20250831-065627_1.jpg", "images/Screenshot_20250831-065630_1.jpg"]
+      },
+      {
+        title: "Yelenvita",
+        cat: "etiquettes",
+        description: "Ce projet est une étiquette que j'ai réalisée pour la marque Yelenvita qui est une marque locale commercialisent les céréales. Ce projet m'a permis de savoir mieux gérer l'équilibre visuel. J'ai pu organisé plusieurs informations utiles sur l'étiquette, cela permet aux utilisateurs d'avoir les informations essentielles directement sur la boîte du produit sans beaucoup se questionner. C'est exactement ce que je fais pour les marques locales pour valoriser leur produit et les différencier de la concurrence.",
+        images: ["images/1760343920893.jpg"]
+      },
+      {
+        title: "Yelenvita",
+        cat: "ai",
+        description: "Yelenvita, la céréale qui booste votre silhouette, c'est un shooting que j'ai réalisé pour ce produit grâce à l'IA. De la conception des étiquettes aux mockups et au Photoshoot IA. Ce produit ne passe plus inaperçu. C'est exactement ce que je fais pour les produits locaux.",
+        images: ["images/IMG-20251013-WA0034.jpg", "images/IMG-20251013-WA0035.jpg", "images/IMG-20251013-WA0036.jpg", "images/IMG-20251013-WA0037.jpg", "images/IMG-20251013-WA0038.jpg", "images/IMG-20251013-WA0039.jpg", "images/IMG-20251013-WA0040.jpg", "images/IMG-20251013-WA0041.jpg"]
+      },
+      {
+        title: "Ely Délices",
+        cat: "ai",
+        description: "Un simple bouteille de cocktail transformée en un cocktail haut de gamme prête à défier les grandes marques. Cette bouteille sort directement de la concurrence et domine le marché. Les clients ont envie de boire du cocktail directement et se voient dans l'histoire que racontent chacune de ces photos. C'est exactement pour valoriser les produits locaux grâce au photoshoot IA.",
+        images: ["images/IMG-20251013-WA0028.jpg", "images/IMG-20251013-WA0029.jpg", "images/IMG-20251013-WA0030.jpg", "images/IMG-20251013-WA0031.jpg", "images/IMG-20251013-WA0032.jpg", "images/IMG-20251013-WA0033.jpg"]
+      },
+      {
+        title: "Rosso Délice",
+        cat: "affiches",
+        description: "Dans le cadre d'un projet fictif pour la marque de boissons naturelles Rosso Délice, j'ai conçu une affiche publicitaire pour un jus de bissap artisanal baptisé 'Rosso Délice'. Ce challenge personnel visait à renforcer mes compétences en design packaging en explorant des compositions graphiques allant authenticité et impact visuel. L'affiche mêle couleurs naturelles inspirées du bissap, typographie moderne et hiérarchie d'informations claire, le tout pensé pour capter l'attention du consommateur tout en affirmant l'identité locale et artisanale du produit.",
+        images: ["images/IMG-20251013-WA0022.jpg"]
+      },
+      {
+        title: "INSPEI Crocs & Jeux",
+        cat: "affiches",
+        description: "INSPEI Crocs & Jeux est un évènement qui permet aux étudiants de se détendre et de rester dans une ambiance festive. J'ai été sollicité pour réaliser l'affiche de présentation de l'évènement. Les couleurs jaune, orange sont choisies pour rappeler l'énergie positive qui est dégagée dans ce type d'évènement. Le bleu est choisi pour rappeler le dynamisme de la jeunesse. J'ai opté pour un design amusant qui rappelle la fête, c'est la raison de l'image choisie et également du logo de l'évènement.",
+        images: ["images/IMG-20251013-WA0021.jpg"]
+      },
+      {
+        title: "Cléopatre Chips",
+        cat: "ai",
+        description: "Une affiche type produit pour présenter les produits de Cléopatre chips, une entreprise qui vend les chips de banane. L'objectif de ce visuel est de montrer les différents chips que vend l'entreprise ainsi que leurs prix maais aussi de donner aux clients l'envie d'acheter.",
+        images: ["images/1760344363366.jpg", "images/1760344363349.png", "images/1760344363283.png","images/1760344363240.png", "images/1760344363318.jpg", "images/1760344363264.png", "images/1760344363215.png", "images/1760344363187.png"]
+      },
+      {
+        title: "Cléopatre Chips",
+        cat: "affiches",
+        description: "Une affiche type produit pour présenter les produits de Cléopatre chips, une entreprise qui vend les chips de banane. L'objectif de ce visuel est de montrer les différents chips que vend l'entreprise ainsi que leurs prix maais aussi de donner aux clients l'envie d'acheter. Le jaune a été choisi pour rester fidèle à la couleur des chips et le vert pour rappeler la nature.",
+        images: ["images/1760343920854.jpg"]
+      },
+      {
+        title: "Ogui Tché",
+        cat: "affiches",
+        description: "Une affiche publicitaire de mise en scène réalisée pour montrer une famille autour du produit Oguitché. Ils prennent le petit déjeuner(bouillie d'akassa). J'ai spécifiquement opté pour un design minimaliste. ",
+        images: ["images/1760343920871.jpg"]
+      },
+       {
+        title: "Ogui Tché",
+        cat: "ai",
+        description: "Shooting produit professionnel pour Ogui tché",
+        images: ["images/IMG-20251025-WA0014.jpg", "images/IMG-20251025-WA0015.jpg", "images/IMG-20251025-WA0016.jpg", "images/IMG-20251025-WA0017.jpg", "images/IMG-20251025-WA0018.jpg", "images/IMG-20251025-WA0019.jpg", "images/IMG-20251025-WA0020.jpg", "images/IMG-20251025-WA0021.jpg", "images/IMG-20251025-WA0022.jpg"]
+      },
+      {
+        title: "Ogui Tché",
+        cat: "ai",
+        description: "Une affiche type produit pour présenter Ogui tché avec son prix. J'ai opté pour un design minimaliste pour attirer l'attention sur le produit principalement.",
+        images: ["images/Ogui tché.jpg"]
+      },
+      {
+        title: "Ogui Tché",
+        cat: "ai",
+        description: "Une affiche publicitaire de mise en scène réelle pour donner envie de prendre le produit. Il montre le bonheur que le produit procure aux enfants. Les parents sont donc automatiquement attirés. C'est la puissance du branding.",
+        images: ["images/IMG-20251027-WA0014.jpg"]
+      },
+      {
+        title: "Bannière Facebook",
+        cat: "banniere",
+        description: "Bannière professionnelle pour mon profil facebook",
+        images: ["images/IMG-20251029-WA0000.jpg"]
+      }
+      // More entries may be added following the same pattern.
+    ];
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    // Create a project card
+    function createCard(project) {
+  const card = document.createElement('article');
+  card.className = 'project-card reveal';
+  card.dataset.category = project.cat;
+  // --- Carrousel ---
+  const thumb = document.createElement('div');
+  thumb.className = 'thumb-carousel';
+  const track = document.createElement('div');
+  track.className = 'thumb-track';
+  project.images.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = project.title;
+    track.appendChild(img);
+  });
+  const prev = document.createElement('button');
+  prev.className = 'thumb-prev';
+  prev.innerHTML = '&#10094;';
+  const next = document.createElement('button');
+  next.className = 'thumb-next';
+  next.innerHTML = '&#10095;';
+  thumb.appendChild(track);
+  thumb.appendChild(prev);
+  thumb.appendChild(next);
+  card.appendChild(thumb);
+  // --- Texte ---
+  const body = document.createElement('div');
+  body.className = 'proj-body';
+  const h = document.createElement('h4');
+  h.className = 'proj-title';
+  h.textContent = project.title;
+  const p = document.createElement('p');
+  p.className = 'proj-desc';
+  p.textContent = project.description || '';
+  body.appendChild(h);
+  body.appendChild(p);
+  card.appendChild(body);
+  // --- Carrousel auto ---
+  let idx = 0;
+  const count = project.images.length;
+  function update() {
+    track.style.transform = `translateX(${-idx * 100}%)`;
+  }
+  // Navigation manuelle
+  prev.addEventListener('click', e => {
+    e.stopPropagation();
+    idx = (idx - 1 + count) % count;
+    update();
+  });
+  next.addEventListener('click', e => {
+    e.stopPropagation();
+    idx = (idx + 1) % count;
+    update();
+  });
+  // Défilement automatique toutes les 5s
+  let autoSlide = setInterval(() => {
+    idx = (idx + 1) % count;
+    update();
+  }, 5000);
+  // Pause auto lorsqu'on survole ou clique
+  thumb.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  thumb.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(() => {
+      idx = (idx + 1) % count;
+      update();
+    }, 5000);
+  });
+  // Clic pour ouvrir le projet en grand
+  thumb.addEventListener('click', () => openLightbox(project, idx));
+  return card;
+}
+function renderProjects(list) {
+  portfolioGrid.innerHTML = '';
+  list.forEach(p => portfolioGrid.appendChild(createCard(p)));
+  observeReveal();
+}
+// --- Initialisation ---
+renderProjects(PROJECTS);
+// --- Filtres ---
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    if (filter === 'all') renderProjects(PROJECTS);
+    else renderProjects(PROJECTS.filter(p => p.cat === filter));
+  });
+});
+// --- Apparition progressive ---
+function observeReveal() {
+  const obs = new IntersectionObserver((entries, observer) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('in');
+        observer.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+}
+// === LIGHTBOX ===
+const lightbox = document.getElementById('lightbox');
+const lbTrack = document.getElementById('lightboxTrack');
+const lbTitle = document.getElementById('lightboxTitle');
+const lbDesc = document.getElementById('lightboxDesc');
+const lbPrev = document.getElementById('lightboxPrev');
+const lbNext = document.getElementById('lightboxNext');
+const lbClose = document.getElementById('lightboxClose');
+let lbIndex = 0, lbCount = 0, lbProject = null;
+function openLightbox(project, startIndex = 0) {
+  lbProject = project;
+  lbIndex = startIndex;
+  lbCount = project.images.length;
+  lbTitle.textContent = project.title;
+  lbDesc.textContent = project.description || '';
+  lbTrack.innerHTML = '';
+  project.images.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = project.title;
+    lbTrack.appendChild(img);
+  });
+  updateLightbox();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function updateLightbox() {
+  lbTrack.style.transform = `translateX(${-lbIndex * 100}%)`;
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+lbPrev.addEventListener('click', () => {
+  lbIndex = (lbIndex - 1 + lbCount) % lbCount;
+  updateLightbox();
+});
+lbNext.addEventListener('click', () => {
+  lbIndex = (lbIndex + 1) % lbCount;
+  updateLightbox();
+});
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+window.addEventListener('keydown', e => {
+  if (lightbox.classList.contains('open')) {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lbPrev.click();
+    if (e.key === 'ArrowRight') lbNext.click();
+  }
+});
+// === MENU MOBILE ===
+const hamburger = document.getElementById('hamburger');
+const mobilePanel = document.getElementById('mobilePanel');
+hamburger.addEventListener('click', () => {
+  mobilePanel.style.display = mobilePanel.style.display === 'block' ? 'none' : 'block';
+});
+document.querySelectorAll('#mobilePanel a, #navList a').forEach(a => {
+  a.addEventListener('click', () => {
+    if (window.innerWidth < 900) mobilePanel.style.display = 'none';
+  });
+});
+    /* CONTACT FORM -> send via WhatsApp */
+    (function(){
+      const form = document.getElementById('contactForm');
+      const whatsappNumber = '2290157783280'; // numéro international (change si nécessaire)
+      // create encoded message from form fields
+      function buildWhatsAppUrl(data){
+        // message template (customize)
+        const template = `Bonjour Samuel,%0A%0AVous avez un nouveau message depuis votre portfolio.%0A%0ANom: ${encodeURIComponent(data.name)}%0AEmail: ${encodeURIComponent(data.email)}%0ASujet: ${encodeURIComponent(data.subject)}%0A%0AMessage:%0A${encodeURIComponent(data.message)}`;
+        return `https://wa.me/${whatsappNumber}?text=${template}`;
+      }
+      // When form submitted: open WhatsApp (mobile or web)
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const fd = new FormData(form);
+        const data = {
+          name: fd.get('name') || '',
+          email: fd.get('email') || '',
+          subject: fd.get('subject') || '',
+          message: fd.get('message') || ''
+        };
+        const url = buildWhatsAppUrl(data);
+        // Open in new tab/window (works for mobile and desktop)
+        window.open(url, '_blank');
+      });
+      // optional: quick buttons
+      document.getElementById('mailtoBtn').addEventListener('click', ()=>{
+        const fd = new FormData(form);
+        const subject = encodeURIComponent(fd.get('subject') || 'Contact portfolio');
+        const body = encodeURIComponent(`Nom: ${fd.get('name') || ''}\nEmail: ${fd.get('email') || ''}\n\n${fd.get('message') || ''}`);
+        window.location.href = `mailto:samuelavocevou2008@gmail.com?subject=${subject}&body=${body}`;
+      });
+      document.getElementById('whatsappQuickBtn').addEventListener('click', ()=>{
+        // simple quick open without fields
+        const quick = `https://wa.me/${whatsappNumber}`;
+        window.open(quick, '_blank');
+      });
+    })();
+    /* Accessibility: allow arrow navigation in project carousels */
+    (function(){
+      let lastTouch = 0;
+      document.addEventListener('touchstart', ()=> lastTouch = Date.now());
+      // mark project-card as touch-active on touch to reveal arrows
+      document.querySelectorAll('.project-card').forEach(card=>{
+        card.addEventListener('touchstart', ()=> {
+          card.classList.add('touch-active');
+          setTimeout(()=>card.classList.remove('touch-active'), 2500);
+        });
+      });
+    })();
+    /* Responsive adjustments if needed (re-init carousels on resize) */
+    window.addEventListener('resize', debounce(()=>{
+      initCarousels();
+    }, 250));
+  </script>
+  <!-- end of document -->
+</body>
+</html>
+
